@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cld</title>
-  <link rel="stylesheet" href="https//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
@@ -14,50 +16,114 @@
 
 <body>
   <header class="header">
-    <div class="header__burger">
-      <span></span>
+    <div class="header__container">
+      <div class="header__burger">
+        <span></span>
+      </div>
+      <a href="#" class="header__logo">
+        <img src="img/logo.svg" alt="Евклид проектные системы">
+      </a>
+      <ul class="header__nav navigation">
+        <li class="navigation__item">
+          <a data-goto=".aboutUs" href="#">О нас</a>
+        </li>
+        <li class="navigation__item">
+          <a data-goto=".hero" href="#">Проекты</a>
+        </li>
+        <li class="navigation__item">
+          <a data-goto=".how-work" href="#">Этапы</a>
+        </li>
+        <li class="navigation__item">
+          <a data-goto=".questions" href="#">Отзывы</a>
+        </li>
+        <li class="navigation__item">
+          <a data-goto=".footer" href="#">Контакты</a>
+        </li>
+      </ul>
+      <button aria-label="найти" class="navigation__item_search">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="7.56126" height="1.89031"
+            transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6062 17.3762)" fill="#333333" />
+          <path
+            d="M20.9303 10.7726C20.9303 16.1533 16.4855 20.5452 10.9652 20.5452C5.44478 20.5452 1 16.1533 1 10.7726C1 5.39198 5.44478 1 10.9652 1C16.4855 1 20.9303 5.39198 20.9303 10.7726Z"
+            stroke="#333333" stroke-width="2" />
+        </svg>
+      </button>
+      <form class="navigation__form search" action="#">
+        <input class="search__input" type="text" name="name" placeholder="Что будем искать?">
+        <div class="search__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="7.56126" height="1.89031"
+              transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6062 17.3762)" fill="#FF9900" />
+            <path
+              d="M20.9303 10.7726C20.9303 16.1533 16.4855 20.5452 10.9652 20.5452C5.44478 20.5452 1 16.1533 1 10.7726C1 5.39198 5.44478 1 10.9652 1C16.4855 1 20.9303 5.39198 20.9303 10.7726Z"
+              stroke="#FF9900" stroke-width="2" />
+          </svg>
+        </div>
+        <div class="search__exit">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8.95386" y="7.30435" width="11.6645" height="2.33291" transform="rotate(45 8.95386 7.30435)"
+              fill="#999999" />
+            <rect x="7.30432" y="15.5524" width="11.6645" height="2.33291" transform="rotate(-45 7.30432 15.5524)"
+              fill="#999999" />
+            <circle cx="12" cy="12" r="11" stroke="#999999" stroke-width="2" />
+          </svg>
+        </div>
+      </form>
     </div>
-    <a href="#" class="header__logo">
-      <img src="img/logo.svg" alt="Евклид проектные системы">
-    </a>
-    <ul class="header__nav navigation">
-      <li>
-        <a href="#aboutUs" class="navigation__item">О нас</a>
-      </li>
-      <li>
-        <a href="#hero" class="navigation__item">Проекты</a>
-      </li>
-      <li>
-        <a href="#how-work" class="navigation__item">Этапы</a>
-      </li>
-      <li>
-        <a href="#questions" class="navigation__item">Отзывы</a>
-      </li>
-      <li>
-        <a href="#footer" class="navigation__item">Контакты</a>
-      </li>
-    </ul>
-    <button aria-label="Найти" class="navigation__item_search">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="7.56126" height="1.89031" transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6062 17.3762)"
-          fill="#333333" />
-        <path
-          d="M20.9303 10.7726C20.9303 16.1533 16.4855 20.5452 10.9652 20.5452C5.44478 20.5452 1 16.1533 1 10.7726C1 5.39198 5.44478 1 10.9652 1C16.4855 1 20.9303 5.39198 20.9303 10.7726Z"
-          stroke="#333333" stroke-width="2" />
-      </svg>
-    </button>
   </header>
+  <div class="gradient"></div>
+  <ul class="navigation_mob">
+    <li class="navigation__item">
+      <a data-goto=".aboutUs" href="#">О нас</a>
+    </li>
+    <li class="navigation__item">
+      <a data-goto=".hero" href="#">Проекты</a>
+    </li>
+    <li class="navigation__item">
+      <a data-goto=".how-work" href="#">Этапы</a>
+    </li>
+    <li class="navigation__item">
+      <a data-goto=".questions" href="#">Отзывы</a>
+    </li>
+    <li class="navigation__item">
+      <a data-goto=".footer" href="#">Контакты</a>
+    </li>
+  </ul>
   <main class="main">
     <div id="hero" class="hero">
       <section class="hero__container">
-        <h1 class="hero__title">
-          Проектные решения любой сложности
-        </h1>
-        <p class="hero__text">
-          Есть над чем задуматься: базовые сценарии поведения пользователей и&nbsp;по&nbsp;сей день остаются уделом
-          проектантов
-        </p>
-        <button class="hero__btn">Заказать расчёт</button>
+        <div class="image-slider swiper-container">
+          <div class="image-slider__wrapper swiper-wrapper">
+            <div class="image-slider__slide swiper-slide">
+              <div class="image-slider__image">
+                <img src="img/low-angle-photo-of-balconies-24620151.jpg" alt="Балконы">
+              </div>
+            </div>
+            <div class="image-slider__slide swiper-slide">
+              <div class="image-slider__image">
+                <img src="img/brown-and-blue-glass-building-20930762.jpg" alt="Мост">
+              </div>
+            </div>
+            <div class="image-slider__slide swiper-slide">
+              <div class="image-slider__image">
+                <img src="img/apartment-apartment-building-architecture-building-3237052.jpg" alt="Здание">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="hero__info">
+            <h1 class="hero__title">
+              Проектные решения любой сложности
+            </h1>
+            <p class="hero__text">
+              Есть над чем задуматься: базовые сценарии поведения пользователей и&nbsp;по&nbsp;сей день остаются
+              уделом
+              проектантов
+            </p>
+            <button class="hero__btn">Заказать расчёт</button>
+          </div>
+        </div>
       </section>
     </div>
 
@@ -118,40 +184,107 @@
         </div>
       </section>
 
-      <section id="how-work" class="container__now-work how-work">
+      <section id="how-work" class="how-work">
         <h2 class="how-work__subtitle">Как мы работаем</h2>
-        <ul class="how-work__list">
-          <li class="how-work__stage">
-            <button class="how-work__link">1 шаг</button>
+        <ul class="how-work__list tabs-nav">
+          <li class="tabs-nav__item">
+            <button class="tabs-nav__btn tabs-nab__btn--active" data-path="one">1 шаг</button>
           </li>
-          <li class="how-work__stage">
-            <button class="how-work__link">2 шаг</button>
+          <li class="tabs-nav__item">
+            <button class="tabs-nav__btn" data-path="two">2 шаг</button>
           </li>
-          <li class="how-work__stage">
-            <button class="how-work__link">3 шаг</button>
+          <li class="tabs-nav__item">
+            <button class="tabs-nav__btn" data-path="three">3 шаг</button>
           </li>
-          <li class="how-work__stage">
-            <button class="how-work__link">4 шаг</button>
+          <li class="tabs-nav__item">
+            <button class="tabs-nav__btn" data-path="four">4 шаг</button>
           </li>
         </ul>
-        <div class="how-work__box">
-          <article class="how-work__content how-work__content_left">
-            <h3 class="how-work__sub-subtitle">Проводим консультацию</h3>
-            <p class="how-work__text">
-              Влечет за&nbsp;собой процесс внедрения и&nbsp;модернизации приоритизации разума над эмоциями.
-              В&nbsp;рамках спецификации
-              современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены
-              соответствующими инстанциями. А&nbsp;также представители современных социальных резервов, инициированные
-              исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей
-              картины, реплицированные с&nbsp;зарубежных источников, современные исследования подвергнуты целой серии
-              независимых исследований. Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают
-              чрезвычайно интересные особенности картины в&nbsp;целом, однако конкретные выводы, разумеется, призваны к
-              ответу.
-            </p>
-            <button class="how-work__btn how-work__btn_left">Подробнее</button>
-            <button class="how-work__btn how-work__btn_right">Договор</button>
-          </article>
-          <div class="how-work__content how-work__content_right">
+        <div class="how-work__content tabs-content">
+          <!-- элементы табов -->
+          <div class="tabs-item" data-target="one">
+            <article class="tabs-item__content tabs-item__content_left">
+              <h3 class="tabs-item__sub-subtitle">Проводим консультацию</h3>
+              <p class="tabs-item__text">
+                Влечет за&nbsp;собой процесс внедрения и&nbsp;модернизации приоритизации разума над эмоциями.
+                В&nbsp;рамках спецификации
+                современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены
+                соответствующими инстанциями. А&nbsp;также представители современных социальных резервов, инициированные
+                исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей
+                картины, реплицированные с&nbsp;зарубежных источников, современные исследования подвергнуты целой серии
+                независимых исследований. Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии
+                освещают
+                чрезвычайно интересные особенности картины в&nbsp;целом, однако конкретные выводы, разумеется, призваны
+                к
+                ответу.
+              </p>
+              <button class="tabs-item__btn tabs-item__btn_left">Подробнее</button>
+              <button class="tabs-item__btn tabs-item__btn_right">Договор</button>
+            </article>
+            <div class="tabs-item__content tabs-item__content_right">
+              <img src="img/Rectangle18.jpg" class="tabs-item__img1" alt="">
+              <img src="img/Rectangle19.jpg" class="tabs-item__img2" alt="">
+            </div>
+          </div>
+          <div class="tabs-item tabs-item--active" data-target="two">
+            <article class="tabs-item__content tabs-item__content_left">
+              <h3 class="tabs-item__sub-subtitle">Составляем смету</h3>
+              <p class="tabs-item__text">
+                Внедрения и&nbsp;модернизации приоритизации разума над эмоциями. В&nbsp;рамках спецификации современных
+                стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими
+                инстанциями. А&nbsp;также представители современных социальных резервов, инициированные исключительно
+                синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины,
+                реплицированные с&nbsp;зарубежных источников, современные исследования подвергнуты целой серии
+                независимых
+                исследований.
+              </p>
+              <button class="tabs-item__btn tabs-item__btn_left">Подробнее</button>
+              <button class="tabs-item__btn tabs-item__btn_right">Договор</button>
+            </article>
+            <div class="tabs-item__content tabs-item__content_right">
+              <img src="img/Rectangle20.jpg" class="tabs-item__img1" alt="">
+              <img src="img/Rectangle201.jpg" class="tabs-item__img2" alt="">
+            </div>
+          </div>
+          <div class="tabs-item " data-target="three">
+            <article class="tabs-item__content tabs-item__content_left">
+              <h3 class="tabs-item__sub-subtitle">Привлекаем подрядчиков</h3>
+              <p class="tabs-item__text">
+                Идейные соображения высшего порядка, а&nbsp;также новая модель организационной деятельности требует
+                анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой
+                аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта
+                напрямую зависит от&nbsp;дальнейших направлений развития. Разнообразный и&nbsp;богатый опыт говорит
+                нам, что новая модель организационной деятельности говорит о&nbsp;возможностях системы массового
+                участия. Принимая во&nbsp;внимание показатели успешности, постоянное информационно-пропагандистское
+                обеспечение нашей деятельности позволяет выполнить важные задания по&nbsp;разработке прогресса
+                профессионального сообщества.
+              </p>
+              <button class="tabs-item__btn tabs-item__btn_left">Подробнее</button>
+              <button class="tabs-item__btn tabs-item__btn_right">Договор</button>
+            </article>
+            <div class="tabs-item__content tabs-item__content_right">
+              <img src="img/Rectangle21.jpg" class="tabs-item__img1" alt="">
+              <img src="img/Rectangle211.jpg" class="tabs-item__img2" alt="">
+            </div>
+          </div>
+          <div class="tabs-item " data-target="four">
+            <article class="tabs-item__content tabs-item__content_left">
+              <h3 class="tabs-item__sub-subtitle">Инспектируем все этапы работ</h3>
+              <p class="tabs-item__text">
+                Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого
+                факта: высококачественный прототип будущего проекта напрямую зависит от&nbsp;дальнейших направлений
+                развития. Разнообразный и&nbsp;богатый опыт говорит нам, что новая модель организационной
+                деятельности говорит о&nbsp;возможностях системы массового участия. Принимая во&nbsp;внимание
+                показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности
+                позволяет.
+              </p>
+              <button class="tabs-item__btn tabs-item__btn_left">Подробнее</button>
+              <button class="tabs-item__btn tabs-item__btn_right">Договор</button>
+            </article>
+            <div class="tabs-item__content tabs-item__content_right">
+              <img src="img/Rectangle22.jpg" class="tabs-item__img1" alt="">
+              <img src="img/Rectangle221.jpg" class="tabs-item__img2" alt="">
+            </div>
           </div>
         </div>
       </section>
@@ -160,7 +293,7 @@
         <ul class="questions__list">
           <li class="questions__items questions__items_first">
             <div class="questions__wrap">
-              <h3>Из чего формируется конечная стоимость проекта?</h3>
+              <h3 class="questions__heading">Из чего формируется конечная стоимость проекта?</h3>
               <div class="questions__icon">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <ellipse cx="25" cy="25" rx="25" ry="25" fill="#ECECEC" />
@@ -171,31 +304,23 @@
               </div>
             </div>
             <div class="questions__text">
-              Являясь всего лишь частью общей картины, непосредственные участники технического прогресса призывают нас к новым свершениям, которые, в свою очередь, должны быть своевременно верифицированы. Но высококачественный прототип будущего проекта является качественно новой ступенью первоочередных требований. А ещё некоторые особенности внутренней политики, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений, что явные признаки победы институционализации призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов.
-              Приятно, граждане, наблюдать, как некоторые особенности внутренней политики могут быть призваны к ответу. Явные признаки победы институционализации набирают популярность среди определенных слоев населения, а значит, должны быть объединены в целые кластеры себе подобных. Банальные, но неопровержимые выводы, а также многие известные личности призывают нас к новым свершениям, которые, в свою очередь, должны быть представлены в исключительно положительном свете.
+              Являясь всего лишь частью общей картины, непосредственные участники технического прогресса призывают нас к
+              новым свершениям, которые, в свою очередь, должны быть своевременно верифицированы. Но высококачественный
+              прототип будущего проекта является качественно новой ступенью первоочередных требований. А ещё некоторые
+              особенности внутренней политики, которые представляют собой яркий пример континентально-европейского типа
+              политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. И нет сомнений,
+              что явные признаки победы институционализации призывают нас к новым свершениям, которые, в свою очередь,
+              должны быть указаны как претенденты на роль ключевых факторов.
+              Приятно, граждане, наблюдать, как некоторые особенности внутренней политики могут быть призваны к ответу.
+              Явные признаки победы институционализации набирают популярность среди определенных слоев населения, а
+              значит, должны быть объединены в целые кластеры себе подобных. Банальные, но неопровержимые выводы, а
+              также многие известные личности призывают нас к новым свершениям, которые, в свою очередь, должны быть
+              представлены в исключительно положительном свете.
             </div>
           </li>
           <li class="questions__items">
             <div class="questions__wrap">
-              <h3>У меня есть свой проект. Сможем ли мы его доработать / реализовать?</h3>
-              <div class="questions__icon">
-                <svg  width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="25" cy="25" rx="25" ry="25" fill="#ECECEC" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z"
-                    fill="#666666" />
-                </svg>
-              </div>
-            </div>
-            <div class="questions__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempora nesciunt, eligendi magni ab sequi ipsa facilis beatae id ut a quibusdam quia pariatur quo alias, necessitatibus commodi quas iusto.
-              Doloribus soluta deserunt eligendi? Maxime minima at unde blanditiis iusto maiores, nesciunt totam corrupti officia fugiat obcaecati animi veniam voluptatibus provident inventore rerum consectetur? Repellat nulla perspiciatis vitae nihil adipisci!
-              Commodi voluptates consequatur odit fuga assumenda asperiores facilis minus beatae eum, sapiente nobis quis molestiae illo voluptatum cum dicta, saepe molestias nihil magni accusantium aliquam iusto pariatur! Quidem, odio a.
-            </div>
-          </li>
-          <li class="questions__items">
-            <div class="questions__wrap">
-              <h3>Я выбираю между разными компаниями. В чём ваше отличие?</h3>
+              <h3 class="questions__heading">У меня есть свой проект. Сможем ли мы его доработать / реализовать?</h3>
               <div class="questions__icon">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <ellipse cx="25" cy="25" rx="25" ry="25" fill="#ECECEC" />
@@ -206,32 +331,20 @@
               </div>
             </div>
             <div class="questions__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempora nesciunt, eligendi magni ab sequi ipsa facilis beatae id ut a quibusdam quia pariatur quo alias, necessitatibus commodi quas iusto.
-              Doloribus soluta deserunt eligendi? Maxime minima at unde blanditiis iusto maiores, nesciunt totam corrupti officia fugiat obcaecati animi veniam voluptatibus provident inventore rerum consectetur? Repellat nulla perspiciatis vitae nihil adipisci!
-              Commodi voluptates consequatur odit fuga assumenda asperiores facilis minus beatae eum, sapiente nobis quis molestiae illo voluptatum cum dicta, saepe molestias nihil magni accusantium aliquam iusto pariatur! Quidem, odio a.
+              Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Правилами ее вскоре
+              что меня, своих путь грамматики щеке рот власти от всех единственное реторический? Залетают выйти свой эта
+              назад агентство!
+              Раз наш напоивший, снова предложения жизни жаренные последний до взобравшись свое вдали большой рыбного за
+              семантика, вопрос путь свою над осталось? Деревни рыбными обеспечивает необходимыми образ знаках инициал
+              вскоре буквоград.
+              Заманивший однажды сбить подзаголовок которой дорогу родного великий что рукопись но, вдали, продолжил
+              агентство последний, вскоре свою. Власти там первую, вскоре но за строчка заглавных взобравшись его всеми
+              переписывается рыбными!
             </div>
           </li>
           <li class="questions__items">
             <div class="questions__wrap">
-              <h3>Могу ли я делегировать вам работу / согласование с подрядчиком / организацией?</h3>
-              <div class="questions__icon">
-                <svg  width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="25" cy="25" rx="25" ry="25" fill="#ECECEC" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z"
-                    fill="#666666" />
-                </svg>
-              </div>
-            </div>
-            <div class="questions__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempora nesciunt, eligendi magni ab sequi ipsa facilis beatae id ut a quibusdam quia pariatur quo alias, necessitatibus commodi quas iusto.
-              Doloribus soluta deserunt eligendi? Maxime minima at unde blanditiis iusto maiores, nesciunt totam corrupti officia fugiat obcaecati animi veniam voluptatibus provident inventore rerum consectetur? Repellat nulla perspiciatis vitae nihil adipisci!
-              Commodi voluptates consequatur odit fuga assumenda asperiores facilis minus beatae eum, sapiente nobis quis molestiae illo voluptatum cum dicta, saepe molestias nihil magni accusantium aliquam iusto pariatur! Quidem, odio a.
-            </div>
-          </li>
-          <li class="questions__items">
-            <div class="questions__wrap">
-              <h3>Могу ли я вернуть деньги на каком-либо из этапов работ?</h3>
+              <h3 class="questions__heading">Я выбираю между разными компаниями. В чём ваше отличие?</h3>
               <div class="questions__icon">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <ellipse cx="25" cy="25" rx="25" ry="25" fill="#ECECEC" />
@@ -242,12 +355,75 @@
               </div>
             </div>
             <div class="questions__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At tempora nesciunt, eligendi magni ab sequi ipsa facilis beatae id ut a quibusdam quia pariatur quo alias, necessitatibus commodi quas iusto.
-              Doloribus soluta deserunt eligendi? Maxime minima at unde blanditiis iusto maiores, nesciunt totam corrupti officia fugiat obcaecati animi veniam voluptatibus provident inventore rerum consectetur? Repellat nulla perspiciatis vitae nihil adipisci!
-              Commodi voluptates consequatur odit fuga assumenda asperiores facilis minus beatae eum, sapiente nobis quis molestiae illo voluptatum cum dicta, saepe molestias nihil magni accusantium aliquam iusto pariatur! Quidem, odio a.
+              Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Эта что власти текст
+              точках первую грамматики там сих пояс о даже необходимыми языкового переписали снова наш пор, курсивных
+              одна?
+              Страну он не деревни, гор, эта но толку текст коварных если путь правилами ему возвращайся живет
+              безорфографичный точках. Несколько возвращайся единственное продолжил последний сих агентство рукопись
+              образ вершину алфавит языком?
+              Не, переписывается. От всех диких букв свой вскоре, всемогущая, необходимыми безорфографичный инициал
+              агентство коварный скатился что своих? Повстречался парадигматическая вершину собрал продолжил, текст
+              подзаголовок составитель приставка рукописи, грамматики взобравшись последний первую!
+              Заглавных коварный рукопись журчит однажды! Дороге оксмокс океана текст домах взгляд путь залетают
+              маленькая, своих которой всемогущая страну жаренные большого, рекламных ему эта страна, свой свою все
+              заголовок до предупреждал.
             </div>
           </li>
-          </ul>
+          <li class="questions__items">
+            <div class="questions__wrap">
+              <h3 class="questions__heading">Могу ли я делегировать вам работу / согласование с подрядчиком /
+                организацией?</h3>
+              <div class="questions__icon">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="25" cy="25" rx="25" ry="25" fill="#ECECEC" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z"
+                    fill="#666666" />
+                </svg>
+              </div>
+            </div>
+            <div class="questions__text">
+              Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Строчка, возвращайся
+              меня точках ручеек дорогу за. Даль, всеми составитель. Свое путь послушавшись назад повстречался большой
+              страна ты, обеспечивает домах.
+              Моей вершину себя своих инициал журчит это продолжил, деревни lorem его сих имеет силуэт вопрос всеми
+              строчка, даль о на берегу подпоясал одна необходимыми гор? Запятой великий которое имеет ее свой.
+              Запятой рекламных которой но которое жизни дороге все послушавшись встретил раз! Что, вопрос. Взобравшись,
+              пор проектах грустный на берегу парадигматическая они если рукописи свою грамматики сбить своего жизни,
+              страна текстов маленький!
+              Прямо переулка продолжил курсивных вскоре запятой которой коварный пустился, знаках инициал грамматики
+              родного на берегу не послушавшись все безорфографичный жизни вдали раз ее ты своего парадигматическая
+              страну, гор большой! Города, рукописи!
+            </div>
+          </li>
+          <li class="questions__items">
+            <div class="questions__wrap">
+              <h3 class="questions__heading">Могу ли я вернуть деньги на каком-либо из этапов работ?</h3>
+              <div class="questions__icon">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="25" cy="25" rx="25" ry="25" fill="#ECECEC" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M25.0571 24.0571L25.0571 9L25.9429 9L25.9429 24.0571L33.8835 24.0571L41 24.0571L41 24.9429L25.9429 24.9429L25.9429 40L25.0571 40L25.0571 24.9429L10 24.9429L10 24.0571L25.0571 24.0571Z"
+                    fill="#666666" />
+                </svg>
+              </div>
+            </div>
+            <div class="questions__text">
+              Далеко-далеко за словесными горами в стране гласных, и согласных живут рыбные тексты. Он не рукописи о,
+              щеке деревни текстов прямо маленький его снова алфавит, запятых переписали себя встретил диких буквоград
+              города образ!
+              Эта букв своих от всех мир вершину раз реторический точках все! Предложения назад всеми грустный
+              переписывается она свое первую предупредила страна текста если маленькая, однажды над великий, заглавных
+              вопроса подзаголовок о?
+              Гор щеке необходимыми родного рыбного города парадигматическая, деревни свой сбить напоивший языкового она
+              осталось грамматики вопрос грустный переписывается меня бросил назад страна, на берегу, ipsum он текстами
+              первую? Бросил, текстов журчит?
+              Журчит семь языком это власти которой снова! Грамматики не имеет там подпоясал текст переписали встретил
+              безопасную, пунктуация моей букв вдали предложения власти своего, сбить лучше продолжил вершину
+              парадигматическая? Букв, одна.
+            </div>
+          </li>
+        </ul>
       </section>
     </div>
   </main>
@@ -319,14 +495,18 @@
       <article class="footer__form block-form">
         <h2 class="block-form__title">Оставить заявку</h2>
         <form class="block-form__container" action="https://jsonplaceholder.typicode.com/posts" method="post">
-          <input class="block-form__input" type="text" name="name" placeholder="Фамилия, имя и отчество*">
-          <input class="block-form__input" type="email" name="e_mail" placeholder="E-mail*">
-          <textarea class="block-form__input block-form__input_textarea" name="massage" id="100" cols="30" rows="7"
-            placeholder="Сообщение"></textarea>
+          <input class="block-form__input" type="text" name="name" placeholder="Фамилия, имя и отчество*" data-validate-field="name">
+          <input class="block-form__input" type="email" name="e_mail" placeholder="E-mail*" data-validate-field="mail">
+          <textarea class="block-form__input block-form__input_textarea" name="message" id="100" cols="30" rows="7"
+            placeholder="Сообщение" data-validate-field="message"></textarea>
           <div class="block-form__wrap">
-            <button class="block-form__button">Отправить данные</button>
-            <input type="checkbox" class="block-form__checkbox"><label for="checkbox" class="block-form__check">Согласен
-              на обработку данных</label>
+            <button class="block-form__button" >Отправить данные</button>
+            <label for="check" class="block-form__check" tabindex="0">
+              <input type="checkbox" class="block-form__checkbox" name="check" id="check" >
+              Согласен на обработку данных
+              <span></span>
+            </label>
+
           </div>
         </form>
       </article>
@@ -341,6 +521,9 @@
   </footer>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/just-validate.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
